@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение | День рождения</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Общие переменные */
+            --color-black: #0a0a0a;
+            --color-black-soft: #1a1a1a;
+            --color-gray-dark: #2a2a2a;
+            --color-gray: #3a3a3a;
+            --color-beige: #f5e8da;
+            --color-beige-dark: #e9dccd;
+            --color-cream: #f8f4e6;
+            --color-chocolate: #3c2f2f;
+            --color-dusty-pink: #d9a5a5;
+            --color-taupe: #b8a99a;
+            --color-warm-gray: #a8a8a8;
+            --color-sepia: #704214;
+            --color-linen: #e9dccd;
+            
+            /* Переменные для каждой девочки (будут меняться) */
+            --color-primary: #5c0716; /* Бордовый для Насти */
+            --color-primary-light: #7a0a1d;
+            --color-primary-dark: #3a0101;
+            --girl-name: "Настя";
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-black);
+            color: var(--color-beige);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            padding: 60px 0 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+        }
+        
+        .title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: var(--color-beige);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .title::after {
+            content: '23';
+            position: absolute;
+            top: -10px;
+            right: -25px;
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            font-weight: 500;
+        }
+        
+        .subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--color-taupe);
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-top: 15px;
+        }
+        
+        /* Letter Section */
+        .letter-section {
+            padding: 60px 0;
+            position: relative;
+        }
+        
+        .letter-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .salutation {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 400;
+            color: var(--color-primary);
+            margin-bottom: 40px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .salutation::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 15px;
+            height: 60%;
+            width: 4px;
+            background-color: var(--color-primary);
+        }
+        
+        .paragraph {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: var(--color-beige-dark);
+            font-weight: 300;
+        }
+        
+        .highlight {
+            color: var(--color-primary);
+            font-weight: 400;
+        }
+        
+        /* Color Section */
+        .color-section {
+            padding: 70px 0;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--color-beige);
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 1px;
+            background-color: var(--color-gray);
+        }
+        
+        /* Personal Color Block */
+        .personal-color-block {
+            background-color: rgba(26, 26, 26, 0.8);
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            border: 1px solid rgba(var(--primary-rgb), 0.2);
+        }
+        
+        .personal-color-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .personal-color-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--color-beige);
+            margin-bottom: 15px;
+        }
+        
+        .personal-color-name {
+            font-size: 1.6rem;
+            color: var(--color-primary);
+            font-weight: 500;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .personal-color-name::before {
+            content: '•';
+            color: var(--color-primary);
+            font-size: 2rem;
+        }
+        
+        .personal-color-desc {
+            font-size: 1.1rem;
+            color: var(--color-taupe);
+            line-height: 1.7;
+            max-width: 500px;
+        }
+        
+        .color-box-container {
+            flex: 0 0 180px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .color-box {
+            width: 180px;
+            height: 180px;
+            background-color: var(--color-primary);
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.3);
+            margin-bottom: 15px;
+            transition: transform 0.5s ease;
+        }
+        
+        .color-box:hover {
+            transform: scale(1.05);
+        }
+        
+        .color-label {
+            font-size: 1.1rem;
+            color: var(--color-primary);
+            font-weight: 500;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        /* Palette */
+        .palette-section {
+            margin: 60px 0;
+            background-color: rgba(30, 30, 30, 0.6);
+            border-radius: 8px;
+            padding: 40px 30px;
+            border: 1px solid rgba(var(--primary-rgb), 0.1);
+        }
+        
+        .palette-title {
+            font-size: 1.5rem;
+            color: var(--color-beige);
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .palette-color {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .color-swatch {
+            width: 100%;
+            height: 60px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .color-swatch:hover {
+            transform: translateY(-5px);
+        }
+        
+        .palette-label {
+            font-size: 0.85rem;
+            color: var(--color-taupe);
+            text-align: center;
+            line-height: 1.4;
+        }
+        
+        .metals-info {
+            text-align: center;
+            color: var(--color-taupe);
+            font-size: 0.95rem;
+            max-width: 600px;
+            margin: 30px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(var(--primary-rgb), 0.2);
+        }
+        
+        /* Images Section */
+        .images-section {
+            padding: 70px 0;
+        }
+        
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .image-placeholder {
+            height: 280px;
+            background-color: var(--color-gray-dark);
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gray);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--color-gray);
+        }
+        
+        .image-placeholder:hover {
+            transform: translateY(-8px);
+            border-color: var(--color-primary);
+            box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.2);
+        }
+        
+        .image-placeholder i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--color-gray);
+        }
+        
+        /* Keywords Section */
+        .keywords-section {
+            padding: 60px 0;
+        }
+        
+        .keywords-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .keyword {
+            padding: 12px 24px;
+            background-color: var(--color-black-soft);
+            color: var(--color-beige);
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 300;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid var(--color-gray);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .keyword:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-3px);
+            border-color: var(--color-primary);
+            box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.2);
+        }
+        
+        .keyword::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .keyword:hover::before {
+            left: 100%;
+        }
+        
+        /* Avoid Section */
+        .avoid-section {
+            padding: 50px;
+            background-color: rgba(var(--primary-rgb), 0.05);
+            border-radius: 8px;
+            margin: 60px 0;
+            border-left: 4px solid var(--color-primary);
+        }
+        
+        .avoid-title {
+            font-size: 1.5rem;
+            color: var(--color-beige);
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+        
+        .avoid-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .avoid-item {
+            padding: 12px 20px;
+            background-color: rgba(26, 26, 26, 0.8);
+            border-radius: 2px;
+            color: var(--color-taupe);
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .avoid-item::before {
+            content: '×';
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+        
+        /* Details & Wishlist */
+        .details-section {
+            padding: 70px 0;
+            text-align: center;
+        }
+        
+        .date-info {
+            font-size: 1.3rem;
+            color: var(--color-beige);
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+        
+        .date-highlight {
+            color: var(--color-primary);
+            font-weight: 500;
+        }
+        
+        .details-note {
+            font-size: 1rem;
+            color: var(--color-taupe);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .wishlist-link {
+            display: inline-block;
+            padding: 18px 40px;
+            background-color: transparent;
+            color: var(--color-primary);
+            border: 1px solid var(--color-primary);
+            border-radius: 30px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        
+        .wishlist-link:hover {
+            background-color: var(--color-primary);
+            color: var(--color-beige);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 60px 0 40px;
+            text-align: center;
+            color: var(--color-gray);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--color-gray-dark);
+            margin-top: 40px;
+        }
+        
+        .footer-note {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--color-taupe);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 0.9rem;
+                letter-spacing: 4px;
+            }
+            
+            .salutation {
+                font-size: 2.2rem;
+            }
+            
+            .paragraph {
+                font-size: 1.1rem;
+            }
+            
+            .personal-color-block {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+            
+            .personal-color-name {
+                justify-content: center;
+            }
+            
+            .color-box-container {
+                margin: 0 auto;
+            }
+            
+            .images-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            }
+            
+            .palette-grid {
+                grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+                gap: 20px;
+            }
+            
+            .avoid-section {
+                padding: 30px 20px;
+            }
+            
+            .avoid-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .palette-grid {
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+                gap: 15px;
+            }
+            
+            .color-swatch {
+                height: 50px;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        /* Decorative elements */
+        .decorative-circle {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(var(--primary-rgb), 0.05) 0%, transparent 70%);
+            z-index: 1;
+        }
+        
+        .circle-1 {
+            top: 10%;
+            right: -100px;
+        }
+        
+        .circle-2 {
+            bottom: 20%;
+            left: -100px;
+        }
+        
+        /* Загрузчик */
+        .loader {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-black);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(var(--primary-rgb), 0.3);
+            border-top-color: var(--color-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        
+        .loader-text {
+            color: var(--color-taupe);
+            font-size: 1.1rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Загружаем твоё приглашение...</div>
+    </div>
+    
+    <div class="container" id="invitation-container" style="display: none;">
+        <div class="decorative-circle circle-1"></div>
+        <div class="decorative-circle circle-2"></div>
+        
+        <header class="header fade-in">
+            <h1 class="title">Приглашение</h1>
+            <div class="subtitle">на день рождения</div>
+        </header>
+        
+        <section class="letter-section fade-in">
+            <div class="letter-content">
+                <div class="salutation" id="girl-name">Настя</div>
+                
+                <p class="paragraph" id="letter-text-1">Я хочу отметить свой день рождения очень камерно: спокойно, собранно и с вниманием к деталям.</p>
+                
+                <p class="paragraph" id="letter-text-2">Мне исполняется <span class="highlight">23</span>, и мне хочется провести этот вечер не шумно, а в кругу девушек, с которыми можно быть настоящей.</p>
+                
+                <p class="paragraph" id="letter-text-3">Я буду очень рада, если ты придёшь.</p>
+            </div>
+        </section>
+        
+        <section class="color-section fade-in">
+            <h2 class="section-title">Стиль вечера</h2>
+            
+            <div class="personal-color-block">
+                <div class="personal-color-info">
+                    <h3 class="personal-color-title" id="style-title">Твой цвет в этом вечере</h3>
+                    <div class="personal-color-name" id="personal-color-name">Бордовый Оксфорд</div>
+                    <p class="personal-color-desc" id="personal-color-desc">Глубокий, насыщенный оттенок, символизирующий внутреннюю силу, уверенность и характер.</p>
+                    <p class="personal-color-desc" id="general-style-desc" style="margin-top: 15px; font-style: italic;">Общий стиль вечера — спокойная, сложная палитра без ярких акцентов.</p>
+                </div>
+                
+                <div class="color-box-container">
+                    <div class="color-box"></div>
+                    <div class="color-label">Твой цвет</div>
+                </div>
+            </div>
+            
+            <div class="palette-section">
+                <h3 class="palette-title">Общая палитра вечера</h3>
+                <div class="palette-grid">
+                    <div class="palette-color">
+                        <div class="color-swatch" style="background-color: #f8f4e6;"></div>
+                        <div class="palette-label">Молочный / айвори</div>
+                    </div>
+                    <div class="palette-color">
+                        <div class="color-swatch" style="background-color: #f5e8da;"></div>
+                        <div class="palette-label">Кремовый</div>
+                    </div>
+                    <div class="palette-color">
+                        <div class="color-swatch" style="background-color: #3c2f2f;"></div>
+                        <div class="palette-label">Шоколадный</div>
+                    </div>
+                    <div class="palette-color">
+                        <div class="color-swatch" style="background-color: #4a4a4a;"></div>
+                        <div class="palette-label">Графитовый</div>
+                    </div>
+                    <div class="palette-color">
+                        <div class="color-swatch" style="background-color: #1a1a1a;"></div>
+                        <div class="palette-label">Мягкий чёрный</div>
+                    </div>
+                    <div class="palette-color">
+                        <div class="color-swatch" style="background-color: #d9a5a5;"></div>
+                        <div class="palette-label">Пыльно-розовый</div>
+                    </div>
+                    <div class="palette-color">
+                        <div class="color-swatch" style="background-color: #b8a99a;"></div>
+                        <div class="palette-label">Тауп / серо-бежевый</div>
+                    </div>
+                    <div class="palette-color">
+                        <div class="color-swatch" style="background-color: #a8a8a8;"></div>
+                        <div class="palette-label">Тёплый серый</div>
+                    </div>
+                    <div class="palette-color">
+                        <div class="color-swatch" style="background-color: #704214;"></div>
+                        <div class="palette-label">Сепия</div>
+                    </div>
+                    <div class="palette-color">
+                        <div class="color-swatch" style="background-color: #e9dccd;"></div>
+                        <div class="palette-label">Льняной</div>
+                    </div>
+                </div>
+                
+                <div class="metals-info">
+                    <strong>Металлы и детали:</strong> античное золото, состаренная латунь, матовое серебро. <br>Лучше избегать холодного блеска.
+                </div>
+            </div>
+        </section>
+        
+        <section class="images-section fade-in">
+            <h2 class="section-title" id="images-title">Визуальные ориентиры</h2>
+            <p style="text-align: center; color: var(--color-taupe); margin-top: 15px; max-width: 600px; margin-left: auto; margin-right: auto;" id="images-description">
+                Если откликнется, можешь опереться на эти образы
+            </p>
+            
+            <div class="images-grid" id="images-grid">
+                <!-- Картинки будут добавляться динамически -->
+            </div>
+        </section>
+        
+        <section class="keywords-section fade-in">
+            <h2 class="section-title">Ключевые слова для вдохновения</h2>
+            <p style="text-align: center; color: var(--color-taupe); margin-top: 10px;">Нажми на любое слово для поиска образов</p>
+            
+            <div class="keywords-grid" id="keywords-grid">
+                <!-- Ключевые слова будут добавляться динамически -->
+            </div>
+            
+            <h3 style="text-align: center; margin-top: 50px; font-size: 1.3rem; color: var(--color-beige); font-weight: 400;">Эстетики</h3>
+            <div class="keywords-grid" id="aesthetics-grid" style="margin-top: 25px;">
+                <!-- Эстетики будут добавляться динамически -->
+            </div>
+        </section>
+        
+        <section class="avoid-section fade-in">
+            <h3 class="avoid-title">Что лучше не использовать</h3>
+            <p style="color: var(--color-taupe); margin-bottom: 25px;">(это важно для целостности образа вечера)</p>
+            
+            <div class="avoid-list">
+                <div class="avoid-item">Чисто-белый</div>
+                <div class="avoid-item">Неоновые цвета</div>
+                <div class="avoid-item">Ярко-красный</div>
+                <div class="avoid-item">Холодный розовый</div>
+                <div class="avoid-item">Ярко-синий (royal blue)</div>
+                <div class="avoid-item">Глянцевый чёрный латексного типа</div>
+            </div>
+        </section>
+        
+        <section class="details-section fade-in">
+            <div class="date-info">
+                <span class="date-highlight">Ориентировочная дата:</span> 11.04 – 12.04
+            </div>
+            <p class="details-note">
+                Точное время и место проведения будет объявлено позже.
+            </p>
+            
+            <div style="margin-top: 50px;">
+                <p style="color: var(--color-beige); margin-bottom: 20px; font-size: 1.1rem;">
+                    Оставлю ссылку на небольшой вишлист — только если вдруг захочется что-то принести, без обязательств.
+                </p>
+                
+                <a href="#" class="wishlist-link" id="wishlist-link">Перейти к вишлисту</a>
+            </div>
+        </section>
+        
+        <footer>
+            <p class="footer-note">С любовью к деталям и сложным оттенкам</p>
+            <p>23</p>
+        </footer>
+    </div>
+
+    <script>
+        // Данные для всех девочек
+        const girlsData = {
+            nastya: {
+                name: "Настя",
+                color: "#5c0716",
+                colorLight: "#7a0a1d",
+                colorDark: "#3a0101",
+                colorName: "Бордовый Оксфорд",
+                colorDescription: "Глубокий, насыщенный оттенок, символизирующий внутреннюю силу, уверенность и характер.",
+                generalStyleDescription: "Общий стиль вечера — спокойная, сложная палитра без ярких акцентов.",
+                letterTexts: [
+                    "Я хочу отметить свой день рождения очень камерно: спокойно, собранно и с вниманием к деталям.",
+                    "Мне исполняется 23, и мне хочется провести этот вечер не шумно, а в кругу девушек, с которыми можно быть настоящей.",
+                    "Я буду очень рада, если ты придёшь."
+                ],
+                imagesTitle: "Визуальные ориентиры",
+                imagesDescription: "Если откликнется, можешь опереться на эти образы",
+                keywords: [
+                    "dark academia outfit",
+                    "vintage academia outfit", 
+                    "soft gothic outfit",
+                    "coquette vintage",
+                    "90s librarian outfit",
+                    "layered dress outfit",
+                    "vintage pinafore dress",
+                    "corset skirt outfit",
+                    "Edwardian inspired outfit"
+                ],
+                aesthetics: [
+                    "dark coquette",
+                    "romantic academia", 
+                    "soft grunge vintage",
+                    "french vintage girl",
+                    "Victorian inspired casual"
+                ],
+                wishlistLink: "#",
+                imagePlaceholders: 6
+            },
+            milena: {
+                name: "Милена",
+                color: "#9c3d2d",
+                colorLight: "#b45a45",
+                colorDark: "#7a2e1f",
+                colorName: "Тёплый приглушённый терракотовый / медный",
+                colorDescription: "Цвет, символизирующий свет, живость и внутреннее тепло.",
+                generalStyleDescription: "Общая палитра вечера — мягкая и сложная, без резких контрастов.",
+                letterTexts: [
+                    "В этом году мне хочется отметить день рождения очень спокойно и по-настоящему.",
+                    "Мне исполняется 23, и я собираю небольшой вечер — про разговоры, ощущения и тепло между людьми.",
+                    "Я правда буду рада, если ты будешь рядом в этот день."
+                ],
+                imagesTitle: "Картинки для вдохновения",
+                imagesDescription: "Воспринимай это как настроение, а не правило",
+                keywords: [
+                    "terracotta outfit",
+                    "warm earthy tones",
+                    "bohemian vintage",
+                    "rustic elegance",
+                    "cozy autumn fashion",
+                    "warm neutral outfit",
+                    "earthy palette fashion",
+                    "soft bohemian style",
+                    "warm minimalism"
+                ],
+                aesthetics: [
+                    "earthy bohemian",
+                    "warm minimalist",
+                    "rustic chic",
+                    "cozy autumn",
+                    "terracotta aesthetic"
+                ],
+                wishlistLink: "#",
+                imagePlaceholders: 6
+            },
+            kristina: {
+                name: "Кристина",
+                color: "#a89bb9",
+                colorLight: "#c2b7d0",
+                colorDark: "#8a7ca0",
+                colorName: "Пыльно-лавандовый / светлый серо-сиреневый",
+                colorDescription: "Нежный оттенок, который остаётся нежным, но не выбивается из общего настроения.",
+                generalStyleDescription: "Вечер будет собран в мягкой, спокойной палитре.",
+                letterTexts: [
+                    "Я отмечаю день рождения немного иначе, чем обычно — камерно, спокойно и без суеты.",
+                    "Мне исполняется 23, и хочется провести этот вечер легко и с удовольствием от общения.",
+                    "Буду очень рада видеть тебя."
+                ],
+                imagesTitle: "Визуальные подсказки",
+                imagesDescription: "Ориентируйся на них так, как тебе комфортно",
+                keywords: [
+                    "dusty lavender outfit",
+                    "pastel gothic",
+                    "soft pastel fashion",
+                    "light grey outfit",
+                    "muted purple fashion",
+                    "delicate color palette",
+                    "soft color outfit",
+                    "subtle pastels",
+                    "gentle hues fashion"
+                ],
+                aesthetics: [
+                    "dusty lavender aesthetic",
+                    "soft pastel gothic",
+                    "muted elegance",
+                    "gentle color palette",
+                    "delicate fashion"
+                ],
+                wishlistLink: "#",
+                imagePlaceholders: 6
+            },
+            zlata: {
+                name: "Злата",
+                color: "#6b7d6d",
+                colorLight: "#8a9c8b",
+                colorDark: "#556155",
+                colorName: "Мягкий оливковый / серо-зелёный",
+                colorDescription: "Спокойный, уравновешенный и очень универсальный цвет.",
+                generalStyleDescription: "Общий стиль вечера — сдержанный и тёплый.",
+                letterTexts: [
+                    "Я хочу отметить свой день рождения в очень спокойном и продуманном формате.",
+                    "Мне исполняется 23, и мне важно провести этот вечер в приятном, неформальном круге.",
+                    "Буду рада, если ты присоединишься."
+                ],
+                imagesTitle: "Визуальные ориентиры",
+                imagesDescription: "Используй их, если захочется",
+                keywords: [
+                    "olive green outfit",
+                    "sage green fashion",
+                    "muted green palette",
+                    "earthy green tones",
+                    "soft green outfit",
+                    "grey-green fashion",
+                    "neutral green outfit",
+                    "subdued color fashion",
+                    "muted earth tones"
+                ],
+                aesthetics: [
+                    "olive green aesthetic",
+                    "earthy greens",
+                    "muted natural palette",
+                    "sage green style",
+                    "subdued elegance"
+                ],
+                wishlistLink: "#",
+                imagePlaceholders: 6
+            },
+            dasha: {
+                name: "Даша",
+                color: "#8b7355",
+                colorLight: "#a38c6f",
+                colorDark: "#6d5a40",
+                colorName: "Молочно-коричневый / тёплый шоколад",
+                colorDescription: "Цвет, символизирующий элегантность, мягкость и собранность.",
+                generalStyleDescription: "Общая палитра вечера — тёплая и сдержанная.",
+                letterTexts: [
+                    "В этом году мне хочется отметить день рождения спокойно и красиво, без лишнего шума.",
+                    "Мне исполняется 23, и я собираю небольшой вечер с вниманием к деталям и атмосфере.",
+                    "Мне будет очень приятно, если ты придёшь."
+                ],
+                imagesTitle: "Визуальные референсы",
+                imagesDescription: "Они просто для настроения",
+                keywords: [
+                    "milk chocolate outfit",
+                    "warm brown fashion",
+                    "caramel tones outfit",
+                    "soft brown palette",
+                    "neutral brown fashion",
+                    "warm beige outfit",
+                    "cozy brown tones",
+                    "soft chocolate fashion",
+                    "muted brown outfit"
+                ],
+                aesthetics: [
+                    "warm brown aesthetic",
+                    "caramel palette",
+                    "chocolate tones",
+                    "soft neutral brown",
+                    "elegant earth tones"
+                ],
+                wishlistLink: "#",
+                imagePlaceholders: 6
+            }
+        };
+
+        // Получаем параметр из URL
+        function getGirlFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const girl = urlParams.get('girl');
+            return girl || 'nastya'; // По умолчанию показываем Насте
+        }
+
+        // Преобразуем hex цвет в rgb
+        function hexToRgb(hex) {
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? {
+                r: parseInt(result[1], 16),
+                g: parseInt(result[2], 16),
+                b: parseInt(result[3], 16)
+            } : null;
+        }
+
+        // Загружаем данные для выбранной девочки
+        function loadGirlData(girlKey) {
+            const girlData = girlsData[girlKey];
+            if (!girlData) {
+                // Если девочка не найдена, показываем сообщение об ошибке
+                document.getElementById('loader').innerHTML = `
+                    <div style="text-align: center; max-width: 500px; padding: 40px;">
+                        <h2 style="color: var(--color-primary); margin-bottom: 20px;">Приглашение не найдено</h2>
+                        <p style="color: var(--color-taupe);">Возможно, ссылка некорректна или приглашение было удалено.</p>
+                        <p style="color: var(--color-taupe); margin-top: 20px;">Обратись к имениннице за корректной ссылкой.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Устанавливаем CSS переменные
+            const root = document.documentElement;
+            root.style.setProperty('--color-primary', girlData.color);
+            root.style.setProperty('--color-primary-light', girlData.colorLight);
+            root.style.setProperty('--color-primary-dark', girlData.colorDark);
+            root.style.setProperty('--girl-name', girlData.name);
+            
+            // Преобразуем цвет в RGB для rgba
+            const rgb = hexToRgb(girlData.color);
+            if (rgb) {
+                root.style.setProperty('--primary-rgb', `${rgb.r}, ${rgb.g}, ${rgb.b}`);
+            }
+
+            // Заполняем текстовые поля
+            document.getElementById('girl-name').textContent = girlData.name;
+            document.getElementById('personal-color-name').textContent = girlData.colorName;
+            document.getElementById('personal-color-desc').textContent = girlData.colorDescription;
+            document.getElementById('general-style-desc').textContent = girlData.generalStyleDescription;
+            document.getElementById('images-title').textContent = girlData.imagesTitle;
+            document.getElementById('images-description').textContent = girlData.imagesDescription;
+            
+            // Заполняем текст письма
+            const letterTexts = document.querySelectorAll('[id^="letter-text-"]');
+            girlData.letterTexts.forEach((text, index) => {
+                if (letterTexts[index]) {
+                    letterTexts[index].textContent = text;
+                }
+            });
+
+            // Заполняем ключевые слова
+            const keywordsGrid = document.getElementById('keywords-grid');
+            keywordsGrid.innerHTML = '';
+            girlData.keywords.forEach(keyword => {
+                const keywordElement = document.createElement('div');
+                keywordElement.className = 'keyword';
+                keywordElement.textContent = keyword;
+                keywordElement.addEventListener('click', () => {
+                    const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(keyword + ' fashion outfit')}&tbm=isch`;
+                    window.open(searchUrl, '_blank');
+                });
+                keywordsGrid.appendChild(keywordElement);
+            });
+
+            // Заполняем эстетики
+            const aestheticsGrid = document.getElementById('aesthetics-grid');
+            aestheticsGrid.innerHTML = '';
+            girlData.aesthetics.forEach(aesthetic => {
+                const aestheticElement = document.createElement('div');
+                aestheticElement.className = 'keyword';
+                aestheticElement.textContent = aesthetic;
+                aestheticElement.addEventListener('click', () => {
+                    const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(aesthetic + ' fashion aesthetic')}&tbm=isch`;
+                    window.open(searchUrl, '_blank');
+                });
+                aestheticsGrid.appendChild(aestheticElement);
+            });
+
+            // Создаем заглушки для картинок
+            const imagesGrid = document.getElementById('images-grid');
+            imagesGrid.innerHTML = '';
+            for (let i = 0; i < girlData.imagePlaceholders; i++) {
+                const imagePlaceholder = document.createElement('div');
+                imagePlaceholder.className = 'image-placeholder';
+                imagePlaceholder.innerHTML = `
+                    <i class="fas fa-plus"></i>
+                    <p>Образ ${i + 1}</p>
+                    <!-- ВСТАВЬТЕ КАРТИНКУ ЗДЕСЬ: <img src="ССЫЛКА" alt="Образ ${i + 1}" style="width:100%; height:100%; object-fit:cover; border-radius:4px;"> -->
+                `;
+                imagesGrid.appendChild(imagePlaceholder);
+            }
+
+            // Устанавливаем ссылку на вишлист
+            document.getElementById('wishlist-link').href = girlData.wishlistLink;
+
+            // Скрываем загрузчик и показываем контент
+            setTimeout(() => {
+                document.getElementById('loader').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loader').style.display = 'none';
+                    document.getElementById('invitation-container').style.display = 'block';
+                    
+                    // Запускаем анимацию появления
+                    const fadeElements = document.querySelectorAll('.fade-in');
+                    fadeElements.forEach(element => {
+                        element.style.opacity = 0;
+                        element.style.transform = 'translateY(20px)';
+                        element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    });
+                    
+                    setTimeout(() => {
+                        fadeElements.forEach(element => {
+                            element.style.opacity = 1;
+                            element.style.transform = 'translateY(0)';
+                        });
+                    }, 100);
+                }, 500);
+            }, 1000);
+        }
+
+        // Инициализация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', () => {
+            const girlKey = getGirlFromURL();
+            loadGirlData(girlKey);
+        });
+
+        // Обработка ссылки вишлиста
+        document.addEventListener('click', (e) => {
+            if (e.target.id === 'wishlist-link' && e.target.href === '#') {
+                e.preventDefault();
+                alert('Ссылка на вишлист будет добавлена позже');
+            }
+        });
+    </script>
+</body>
+</html>
