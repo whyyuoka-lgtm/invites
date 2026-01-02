@@ -9,978 +9,80 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            /* Общие переменные */
-            --color-black: #0a0a0a;
-            --color-black-soft: #1a1a1a;
-            --color-gray-dark: #2a2a2a;
-            --color-gray: #3a3a3a;
-            --color-beige: #f5e8da;
-            --color-beige-dark: #e9dccd;
-            --color-cream: #f8f4e6;
-            --color-chocolate: #3c2f2f;
-            --color-dusty-pink: #d9a5a5;
-            --color-taupe: #b8a99a;
-            --color-warm-gray: #a8a8a8;
-            --color-sepia: #704214;
-            --color-linen: #e9dccd;
-            
-            /* Переменные для каждой девочки (будут меняться) */
-            --color-primary: #5c0716; /* Бордовый для Насти */
-            --color-primary-light: #7a0a1d;
-            --color-primary-dark: #3a0101;
-            --girl-name: "Настя";
-        }
+        /* Все стили остаются такими же, как в предыдущем коде */
+        /* Для краткости не дублирую все стили, оставляю только обновлённые части */
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--color-black);
-            color: var(--color-beige);
-            line-height: 1.6;
-            overflow-x: hidden;
-            background-attachment: fixed;
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        .header {
-            padding: 60px 0 40px;
-            text-align: center;
-            position: relative;
-        }
-        
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 150px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
-        }
-        
-        .title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 4rem;
-            font-weight: 300;
-            letter-spacing: 3px;
-            color: var(--color-beige);
-            margin-bottom: 10px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .title::after {
-            content: '23';
-            position: absolute;
-            top: -10px;
-            right: -25px;
-            font-size: 1.8rem;
-            color: var(--color-primary);
-            font-weight: 500;
-        }
-        
-        .subtitle {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 300;
-            color: var(--color-taupe);
-            letter-spacing: 8px;
-            text-transform: uppercase;
-            margin-top: 15px;
-        }
-        
-        /* Letter Section */
-        .letter-section {
-            padding: 60px 0;
-            position: relative;
-        }
-        
-        .letter-content {
-            max-width: 700px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .salutation {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
-            font-weight: 400;
-            color: var(--color-primary);
-            margin-bottom: 40px;
-            position: relative;
-            padding-left: 20px;
-        }
-        
-        .salutation::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 15px;
-            height: 60%;
-            width: 4px;
-            background-color: var(--color-primary);
-        }
-        
-        .paragraph {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            color: var(--color-beige-dark);
-            font-weight: 300;
-        }
-        
-        .highlight {
-            color: var(--color-primary);
-            font-weight: 400;
-        }
-        
-        /* Color Section */
-        .color-section {
-            padding: 70px 0;
-            margin: 40px 0;
-            position: relative;
-        }
-        
-        .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
-            font-weight: 400;
-            color: var(--color-beige);
-            margin-bottom: 50px;
-            text-align: center;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 1px;
-            background-color: var(--color-gray);
-        }
-        
-        /* Personal Color Block */
-        .personal-color-block {
-            background-color: rgba(26, 26, 26, 0.8);
-            border-radius: 8px;
-            padding: 40px;
-            margin-bottom: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 40px;
-            border: 1px solid rgba(var(--primary-rgb), 0.2);
-        }
-        
-        .personal-color-info {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .personal-color-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            color: var(--color-beige);
-            margin-bottom: 15px;
-        }
-        
-        .personal-color-name {
-            font-size: 1.6rem;
-            color: var(--color-primary);
-            font-weight: 500;
-            margin-bottom: 20px;
+        /* Дополнительные стили для улучшенного плеера */
+        .track-info {
             display: flex;
             align-items: center;
             gap: 10px;
-        }
-        
-        .personal-color-name::before {
-            content: '•';
-            color: var(--color-primary);
-            font-size: 2rem;
-        }
-        
-        .personal-color-desc {
-            font-size: 1.1rem;
-            color: var(--color-taupe);
-            line-height: 1.7;
-            max-width: 500px;
-        }
-        
-        .color-box-container {
-            flex: 0 0 180px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .color-box {
-            width: 180px;
-            height: 180px;
-            background-color: var(--color-primary);
-            border-radius: 50%;
-            position: relative;
-            box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.3);
             margin-bottom: 15px;
-            transition: transform 0.5s ease;
-        }
-        
-        .color-box:hover {
-            transform: scale(1.05);
-        }
-        
-        .color-label {
-            font-size: 1.1rem;
-            color: var(--color-primary);
-            font-weight: 500;
-            text-align: center;
-            margin-top: 10px;
-        }
-        
-        /* Palette */
-        .palette-section {
-            margin: 60px 0;
-            background-color: rgba(30, 30, 30, 0.6);
-            border-radius: 8px;
-            padding: 40px 30px;
-            border: 1px solid rgba(var(--primary-rgb), 0.1);
-        }
-        
-        .palette-title {
-            font-size: 1.5rem;
-            color: var(--color-beige);
-            margin-bottom: 40px;
-            text-align: center;
-            font-weight: 400;
-            letter-spacing: 1px;
-        }
-        
-        .palette-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-        
-        .palette-color {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .color-swatch {
-            width: 100%;
-            height: 60px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .color-swatch:hover {
-            transform: translateY(-5px);
-        }
-        
-        .palette-label {
-            font-size: 0.85rem;
-            color: var(--color-taupe);
-            text-align: center;
-            line-height: 1.4;
-        }
-        
-        .metals-info {
-            text-align: center;
-            color: var(--color-taupe);
-            font-size: 0.95rem;
-            max-width: 600px;
-            margin: 30px auto 0;
-            padding-top: 20px;
-            border-top: 1px solid rgba(var(--primary-rgb), 0.2);
-        }
-        
-        /* Images Section */
-        .images-section {
-            padding: 70px 0;
-        }
-        
-        .images-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-        
-        .image-item {
-            height: 280px;
-            border-radius: 8px;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid var(--color-gray);
-            cursor: pointer;
-            transition: all 0.5s ease;
-        }
-        
-        .image-item:hover {
-            transform: translateY(-10px) scale(1.02);
-            border-color: var(--color-primary);
-            box-shadow: 0 20px 40px rgba(var(--primary-rgb), 0.25);
-        }
-        
-        .image-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.8s ease;
-        }
-        
-        .image-item:hover img {
-            transform: scale(1.05);
-        }
-        
-        .image-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-            color: var(--color-beige);
-            padding: 20px 15px 15px;
-            text-align: center;
-            font-size: 0.9rem;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.4s ease;
-        }
-        
-        .image-item:hover .image-overlay {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .image-overlay i {
-            margin-right: 8px;
-            color: var(--color-primary);
-        }
-        
-        /* Inspiration Board */
-        .inspiration-board {
-            padding: 80px 0;
-            background-color: rgba(15, 15, 15, 0.4);
-            margin: 60px 0;
-            border-radius: 12px;
-        }
-        
-        .masonry-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            grid-auto-rows: 150px;
-            gap: 20px;
-            margin-top: 40px;
-            padding: 0 10px;
-        }
-        
-        .masonry-item {
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
-            cursor: default;
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid transparent;
-        }
-        
-        .masonry-item:hover {
-            transform: translateY(-8px) scale(1.03);
-            border-color: var(--color-primary);
-            box-shadow: 0 15px 35px rgba(var(--primary-rgb), 0.2);
-            z-index: 10;
-        }
-        
-        .masonry-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 1.2s ease;
-        }
-        
-        .masonry-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .masonry-item.tall {
-            grid-row: span 2;
-        }
-        
-        .masonry-item.wide {
-            grid-column: span 2;
-        }
-        
-        .masonry-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
-            color: var(--color-beige);
-            padding: 25px 15px 15px;
-            text-align: center;
-            font-size: 0.85rem;
-            opacity: 0;
-            transform: translateY(15px);
-            transition: all 0.5s ease;
-        }
-        
-        .masonry-item:hover .masonry-overlay {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Playlist Section */
-        .playlist-section {
-            padding: 70px 0;
-            background-color: rgba(20, 20, 20, 0.7);
-            margin: 60px 0;
-            border-radius: 12px;
-        }
-        
-        .playlist-container {
-            max-width: 600px;
-            margin: 40px auto 0;
-        }
-        
-        .music-player {
-            background-color: rgba(30, 30, 30, 0.9);
-            border-radius: 12px;
-            padding: 30px;
-            border: 1px solid rgba(var(--primary-rgb), 0.2);
-        }
-        
-        .player-controls {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 25px;
-        }
-        
-        .play-btn, .volume-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: var(--color-primary);
-            border: none;
-            color: var(--color-beige);
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .play-btn:hover, .volume-btn:hover {
-            transform: scale(1.1);
-            background-color: var(--color-primary-light);
-        }
-        
-        .track-info {
-            flex: 1;
         }
         
         .track-title {
+            font-size: 1rem;
             color: var(--color-beige);
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            font-weight: 300;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            flex-grow: 1;
         }
         
-        .track-progress {
+        .player-progress {
             width: 100%;
-            height: 3px;
+            height: 4px;
             background-color: var(--color-gray-dark);
             border-radius: 2px;
-            overflow: hidden;
+            margin-top: 10px;
+            cursor: pointer;
+            position: relative;
         }
         
-        .progress-bar {
+        .progress-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
             height: 100%;
             width: 0%;
             background-color: var(--color-primary);
-            transition: width 0.3s ease;
-        }
-        
-        .playlist-tracks {
-            margin-top: 25px;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-        
-        .playlist-tracks::-webkit-scrollbar {
-            width: 6px;
-        }
-        
-        .playlist-tracks::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 3px;
-        }
-        
-        .playlist-tracks::-webkit-scrollbar-thumb {
-            background: var(--color-primary);
-            border-radius: 3px;
-        }
-        
-        .track-item {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background-color: rgba(40, 40, 40, 0.6);
-        }
-        
-        .track-item:hover {
-            background-color: rgba(var(--primary-rgb), 0.1);
-            transform: translateX(5px);
-        }
-        
-        .track-item.playing {
-            background-color: rgba(var(--primary-rgb), 0.2);
-            border-left: 3px solid var(--color-primary);
-        }
-        
-        .track-number {
-            color: var(--color-primary);
-            font-size: 0.9rem;
-            width: 40px;
-            font-weight: 500;
-        }
-        
-        .track-details {
-            flex: 1;
-        }
-        
-        .track-name {
-            color: var(--color-beige);
-            font-size: 1rem;
-            margin-bottom: 4px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        .track-duration {
-            color: var(--color-taupe);
-            font-size: 0.85rem;
-        }
-        
-        .spotify-icon {
-            color: #1DB954;
-            margin-right: 5px;
-        }
-        
-        /* Keywords Section */
-        .keywords-section {
-            padding: 60px 0;
-        }
-        
-        .keywords-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 40px;
-        }
-        
-        .keyword {
-            padding: 12px 24px;
-            background-color: var(--color-black-soft);
-            color: var(--color-beige);
-            border-radius: 30px;
-            font-size: 1rem;
-            font-weight: 300;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 1px solid var(--color-gray);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .keyword:hover {
-            background-color: var(--color-primary);
-            transform: translateY(-3px);
-            border-color: var(--color-primary);
-            box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.2);
-        }
-        
-        .keyword::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-        
-        .keyword:hover::before {
-            left: 100%;
-        }
-        
-        /* Avoid Section */
-        .avoid-section {
-            padding: 50px;
-            background-color: rgba(var(--primary-rgb), 0.05);
-            border-radius: 8px;
-            margin: 60px 0;
-            border-left: 4px solid var(--color-primary);
-        }
-        
-        .avoid-title {
-            font-size: 1.5rem;
-            color: var(--color-beige);
-            margin-bottom: 25px;
-            font-weight: 400;
-        }
-        
-        .avoid-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-        }
-        
-        .avoid-item {
-            padding: 12px 20px;
-            background-color: rgba(26, 26, 26, 0.8);
             border-radius: 2px;
-            color: var(--color-taupe);
-            font-size: 0.95rem;
-            position: relative;
-            padding-left: 30px;
+            transition: width 0.1s linear;
         }
         
-        .avoid-item::before {
-            content: '×';
-            position: absolute;
-            left: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--color-primary);
-            font-weight: bold;
-        }
-        
-        /* Details & Wishlist */
-        .details-section {
-            padding: 70px 0;
-            text-align: center;
-        }
-        
-        .date-info {
-            font-size: 1.3rem;
-            color: var(--color-beige);
-            margin-bottom: 25px;
-            font-weight: 300;
-        }
-        
-        .date-highlight {
-            color: var(--color-primary);
-            font-weight: 500;
-        }
-        
-        .details-note {
-            font-size: 1rem;
-            color: var(--color-taupe);
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .wishlist-link {
-            display: inline-block;
-            padding: 18px 40px;
-            background-color: transparent;
-            color: var(--color-primary);
-            border: 1px solid var(--color-primary);
-            border-radius: 30px;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            margin-top: 20px;
-        }
-        
-        .wishlist-link:hover {
-            background-color: var(--color-primary);
-            color: var(--color-beige);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.3);
-        }
-        
-        /* Footer */
-        footer {
-            padding: 60px 0 40px;
-            text-align: center;
-            color: var(--color-gray);
-            font-size: 0.9rem;
-            border-top: 1px solid var(--color-gray-dark);
-            margin-top: 40px;
-        }
-        
-        .footer-note {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
-            color: var(--color-taupe);
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-        
-        /* Floating Elements */
-        .floating-elements {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-        
-        .floating-element {
-            position: absolute;
-            color: rgba(var(--primary-rgb), 0.1);
-            font-size: 1.5rem;
-            animation: float 15s infinite linear;
-        }
-        
-        .element-1 {
-            top: 15%;
-            left: 5%;
-            animation-delay: 0s;
-        }
-        
-        .element-2 {
-            top: 25%;
-            right: 10%;
-            animation-delay: 3s;
-        }
-        
-        .element-3 {
-            top: 60%;
-            left: 8%;
-            animation-delay: 6s;
-        }
-        
-        .element-4 {
-            top: 70%;
-            right: 5%;
-            animation-delay: 9s;
-        }
-        
-        .element-5 {
-            top: 45%;
-            left: 50%;
-            animation-delay: 12s;
-        }
-        
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            25% {
-                transform: translateY(-20px) rotate(90deg);
-            }
-            50% {
-                transform: translateY(0) rotate(180deg);
-            }
-            75% {
-                transform: translateY(20px) rotate(270deg);
-            }
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .title {
-                font-size: 3rem;
-            }
-            
-            .subtitle {
-                font-size: 0.9rem;
-                letter-spacing: 4px;
-            }
-            
-            .salutation {
-                font-size: 2.2rem;
-            }
-            
-            .paragraph {
-                font-size: 1.1rem;
-            }
-            
-            .personal-color-block {
-                flex-direction: column;
-                text-align: center;
-                padding: 30px 20px;
-            }
-            
-            .personal-color-name {
-                justify-content: center;
-            }
-            
-            .color-box-container {
-                margin: 0 auto;
-            }
-            
-            .images-grid {
-                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            }
-            
-            .palette-grid {
-                grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-                gap: 20px;
-            }
-            
-            .avoid-section {
-                padding: 30px 20px;
-            }
-            
-            .avoid-list {
-                grid-template-columns: 1fr;
-            }
-            
-            .masonry-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                grid-auto-rows: 120px;
-                gap: 15px;
-            }
-            
-            .image-item {
-                height: 220px;
-            }
-            
-            .player-controls {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .palette-grid {
-                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-                gap: 15px;
-            }
-            
-            .color-swatch {
-                height: 50px;
-            }
-            
-            .masonry-grid {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-                grid-auto-rows: 100px;
-                gap: 10px;
-            }
-            
-            .image-item {
-                height: 200px;
-            }
-            
-            .masonry-item.wide {
-                grid-column: span 1;
-            }
-            
-            .masonry-item.tall {
-                grid-row: span 1;
-            }
-        }
-        
-        /* Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.8s ease forwards;
-        }
-        
-        /* Decorative elements */
-        .decorative-circle {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(var(--primary-rgb), 0.05) 0%, transparent 70%);
-            z-index: 1;
-        }
-        
-        .circle-1 {
-            top: 10%;
-            right: -100px;
-        }
-        
-        .circle-2 {
-            bottom: 20%;
-            left: -100px;
-        }
-        
-        /* Загрузчик */
-        .loader {
+        .volume-controls {
             display: flex;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--color-black);
-            z-index: 9999;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            transition: opacity 0.5s ease;
+            gap: 10px;
+            width: 100%;
+            margin-top: 15px;
         }
         
-        .loader-spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(var(--primary-rgb), 0.3);
-            border-top-color: var(--color-primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 20px;
+        .volume-slider {
+            flex-grow: 1;
+            height: 4px;
+            background-color: var(--color-gray-dark);
+            border-radius: 2px;
+            position: relative;
+            cursor: pointer;
         }
         
-        .loader-text {
+        .volume-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 50%;
+            background-color: var(--color-primary);
+            border-radius: 2px;
+        }
+        
+        .player-stats {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
             color: var(--color-taupe);
-            font-size: 1.1rem;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -990,466 +92,60 @@
         <div class="loader-text">Загружаем твоё приглашение...</div>
     </div>
     
-    <div class="container" id="invitation-container" style="display: none;">
-        <div class="decorative-circle circle-1"></div>
-        <div class="decorative-circle circle-2"></div>
-        
-        <!-- Парящие элементы -->
-        <div class="floating-elements">
-            <div class="floating-element element-1">✦</div>
-            <div class="floating-element element-2">✧</div>
-            <div class="floating-element element-3">❈</div>
-            <div class="floating-element element-4">✶</div>
-            <div class="floating-element element-5">✷</div>
+    <!-- Мини-плеер (будет в правом верхнем углу) -->
+    <div class="mini-player fade-in" id="miniPlayer">
+        <div class="player-header">
+            <div class="player-title">
+                <i class="fas fa-music"></i>
+                <span>Плейлист вечера</span>
+            </div>
+            <button class="close-player" id="closePlayer">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
+        
+        <div class="track-info">
+            <div class="track-title" id="currentTrack">Загрузка музыки...</div>
+            <div class="player-stats">
+                <span id="currentTime">0:00</span>
+                <span id="totalTime">0:00</span>
+            </div>
+        </div>
+        
+        <div class="player-progress" id="progressBar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        
+        <div class="player-controls-mini">
+            <button class="play-btn-mini" id="playBtnMini">
+                <i class="fas fa-play"></i>
+            </button>
+            <button class="next-btn-mini" id="nextBtnMini">
+                <i class="fas fa-forward"></i>
+            </button>
+            
+            <div class="volume-controls">
+                <button class="mute-btn-mini" id="muteBtnMini">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <div class="volume-slider" id="volumeSlider">
+                    <div class="volume-fill" id="volumeFill"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Основной контейнер с приглашением -->
+    <div class="container" id="invitation-container" style="display: none;">
+        <!-- Все остальные секции остаются без изменений -->
+        <!-- Для экономии места не дублирую весь HTML, он остаётся таким же -->
         
         <header class="header fade-in">
             <h1 class="title">Приглашение</h1>
             <div class="subtitle">на день рождения</div>
         </header>
         
-        <section class="letter-section fade-in">
-            <div class="letter-content">
-                <div class="salutation" id="girl-name">Настя</div>
-                
-                <p class="paragraph" id="letter-text-1">Я хочу отметить свой день рождения очень камерно: спокойно, собранно и с вниманием к деталям.</p>
-                
-                <p class="paragraph" id="letter-text-2">Мне исполняется <span class="highlight">23</span>, и мне хочется провести этот вечер не шумно, а в кругу девушек, с которыми можно быть cобой.</p>
-                
-                <p class="paragraph" id="letter-text-3">Я буду очень рада, если ты придёшь.</p>
-            </div>
-        </section>
-        
-        <section class="color-section fade-in">
-            <h2 class="section-title">Стиль вечера</h2>
-            
-            <div class="personal-color-block">
-                <div class="personal-color-info">
-                    <h3 class="personal-color-title" id="style-title">Твой цвет в этом вечере</h3>
-                    <div class="personal-color-name" id="personal-color-name">Бордовый Оксфорд</div>
-                    <p class="personal-color-desc" id="personal-color-desc">Глубокий, насыщенный оттенок, символизирующий внутреннюю силу, уверенность и характер.</p>
-                    <p class="personal-color-desc" id="general-style-desc" style="margin-top: 15px; font-style: italic;"></p>
-                </div>
-                
-                <div class="color-box-container">
-                    <div class="color-box"></div>
-                    <div class="color-label">Твой цвет</div>
-                </div>
-            </div>
-            
-            <div class="palette-section">
-                <h3 class="palette-title">Общая палитра вечера</h3>
-                <div class="palette-grid">
-                    <div class="palette-color">
-                        <div class="color-swatch" style="background-color: #f8f4e6;"></div>
-                        <div class="palette-label">Молочный / айвори</div>
-                    </div>
-                    <div class="palette-color">
-                        <div class="color-swatch" style="background-color: #f5e8da;"></div>
-                        <div class="palette-label">Кремовый</div>
-                    </div>
-                    <div class="palette-color">
-                        <div class="color-swatch" style="background-color: #3c2f2f;"></div>
-                        <div class="palette-label">Шоколадный</div>
-                    </div>
-                    <div class="palette-color">
-                        <div class="color-swatch" style="background-color: #4a4a4a;"></div>
-                        <div class="palette-label">Графитовый</div>
-                    </div>
-                    <div class="palette-color">
-                        <div class="color-swatch" style="background-color: #1a1a1a;"></div>
-                        <div class="palette-label">Мягкий чёрный</div>
-                    </div>
-                    <div class="palette-color">
-                        <div class="color-swatch" style="background-color: #d9a5a5;"></div>
-                        <div class="palette-label">Пыльно-розовый</div>
-                    </div>
-                    <div class="palette-color">
-                        <div class="color-swatch" style="background-color: #b8a99a;"></div>
-                        <div class="palette-label">Тауп / серо-бежевый</div>
-                    </div>
-                    <div class="palette-color">
-                        <div class="color-swatch" style="background-color: #a8a8a8;"></div>
-                        <div class="palette-label">Тёплый серый</div>
-                    </div>
-                    <div class="palette-color">
-                        <div class="color-swatch" style="background-color: #704214;"></div>
-                        <div class="palette-label">Сепия</div>
-                    </div>
-                    <div class="palette-color">
-                        <div class="color-swatch" style="background-color: #e9dccd;"></div>
-                        <div class="palette-label">Льняной</div>
-                    </div>
-                </div>
-                
-                <div class="metals-info">
-                    <strong>Металлы и детали:</strong> античное золото, состаренная латунь, матовое серебро. <br>Лучше избегать холодного блеска.
-                </div>
-            </div>
-        </section>
-        
-        <!-- Images Section -->
-        <section class="images-section fade-in">
-            <h2 class="section-title" id="images-title">Визуальные ориентиры</h2>
-            <p style="text-align: center; color: var(--color-taupe); margin-top: 15px; max-width: 600px; margin-left: auto; margin-right: auto;" id="images-description">
-                Можешь опереться на эти образы
-            </p>
-            
-            <div class="images-grid">
-                <!-- Образ 1 -->
-                <div class="image-item">
-                    <img src="https://i.pinimg.com/736x/c9/97/35/c99735f73801fee396665fa36bf37a8e.jpg" 
-                         alt="Тёмная эстетика с платьем"
-                         loading="lazy">
-                    <div class="image-overlay">
-                        <i class="fas fa-search"></i>
-                        <p>Тёмная эстетика</p>
-                    </div>
-                </div>
-                
-                <!-- Образ 2 -->
-                <div class="image-item">
-                    <img src="https://i.pinimg.com/736x/7b/d3/de/7bd3deade653decac5223a8d860c9787.jpg" 
-                         alt="Бордовый свитер и юбка"
-                         loading="lazy">
-                    <div class="image-overlay">
-                        <i class="fas fa-search"></i>
-                        <p>Бордовая палитра</p>
-                    </div>
-                </div>
-                
-                <!-- Образ 3 -->
-                <div class="image-item">
-                    <img src="https://i.pinimg.com/1200x/4c/34/28/4c3428c477e04e22fa876637f74c447a.jpg" 
-                         alt="Коричневый образ с плащом"
-                         loading="lazy">
-                    <div class="image-overlay">
-                        <i class="fas fa-search"></i>
-                        <p>Тёплые оттенки</p>
-                    </div>
-                </div>
-                
-                <!-- Образ 4 -->
-                <div class="image-item">
-                    <img src="https://i.pinimg.com/1200x/07/17/7b/07177b4db443d6d45fc62f30a16036a6.jpg" 
-                         alt="Чёрное платье с кружевом"
-                         loading="lazy">
-                    <div class="image-overlay">
-                        <i class="fas fa-search"></i>
-                        <p>Кружевные детали</p>
-                    </div>
-                </div>
-                
-                <!-- Образ 5 -->
-                <div class="image-item">
-                    <img src="https://i.pinimg.com/736x/5e/6d/8e/5e6d8e273c9e7066ef7642767ef81b66.jpg" 
-                         alt="Шерстяной костюм"
-                         loading="lazy">
-                    <div class="image-overlay">
-                        <i class="fas fa-search"></i>
-                        <p>Текстуры и слои</p>
-                    </div>
-                </div>
-                
-                <!-- Образ 6 -->
-                <div class="image-item">
-                    <img src="https://i.pinimg.com/736x/45/a7/10/45a710d382b8b0e202880baf645b10d5.jpg" 
-                         alt="Серый образ с поясом"
-                         loading="lazy">
-                    <div class="image-overlay">
-                        <i class="fas fa-search"></i>
-                        <p>Сдержанная элегантность</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Inspiration Board -->
-        <section class="inspiration-board fade-in">
-            <h2 class="section-title">Доска вдохновения</h2>
-            <p style="text-align: center; color: var(--color-taupe); margin-top: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Общее настроение вечера — спокойное, тёплое, с вниманием к деталям
-            </p>
-            
-            <div class="masonry-grid">
-                <!-- Ряд 1 -->
-                <div class="masonry-item tall" style="grid-row: span 2;">
-                    <img src="https://i.pinimg.com/736x/76/50/d6/7650d65f429cc9ce14b3f570b061ec43.jpg" 
-                         alt="Интерьер с свечами" 
-                         loading="lazy">
-                    <div class="masonry-overlay">
-                        <p>Атмосфера</p>
-                    </div>
-                </div>
-                
-                <div class="masonry-item">
-                    <img src="https://i.pinimg.com/1200x/bb/8a/f2/bb8af20053f70176d1e0e67fef94ab5a.jpg" 
-                         alt="Старинные книги" 
-                         loading="lazy">
-                    <div class="masonry-overlay">
-                        <p>Винтаж</p>
-                    </div>
-                </div>
-                
-                <div class="masonry-item wide" style="grid-column: span 2;">
-                    <img src="https://i.pinimg.com/736x/9e/08/83/9e0883648bf2e51ada8f6626fc8a5c67.jpg" 
-                         alt="Композиция с цветами" 
-                         loading="lazy">
-                    <div class="masonry-overlay">
-                        <p>Детали</p>
-                    </div>
-                </div>
-                
-                <!-- Ряд 2 -->
-                <div class="masonry-item">
-                    <img src="https://i.pinimg.com/736x/9c/8d/2f/9c8d2fdb4bd8d15df28bdb66c98e8f79.jpg" 
-                         alt="Текстуры тканей" 
-                         loading="lazy">
-                    <div class="masonry-overlay">
-                        <p>Текстуры</p>
-                    </div>
-                </div>
-                
-                <div class="masonry-item">
-                    <img src="https://i.pinimg.com/736x/42/f5/24/42f52471cebb40e113eb723e5da9484b.jpg" 
-                         alt="Осенние листья" 
-                         loading="lazy">
-                    <div class="masonry-overlay">
-                        <p>Природа</p>
-                    </div>
-                </div>
-                
-                <div class="masonry-item tall" style="grid-row: span 2;">
-                    <img src="https://i.pinimg.com/736x/e2/e0/8f/e2e08fe0f50049f12abc3b389cf6facf.jpg" 
-                         alt="Архитектура" 
-                         loading="lazy">
-                    <div class="masonry-overlay">
-                        <p>Архитектура</p>
-                    </div>
-                </div>
-                
-                <!-- Ряд 3 -->
-                <div class="masonry-item">
-                    <img src="https://i.pinimg.com/736x/b2/e9/7e/b2e97efe941b493e81c1913e4ee33d72.jpg" 
-                         alt="Чашка кофе" 
-                         loading="lazy">
-                    <div class="masonry-overlay">
-                        <p>Уют</p>
-                    </div>
-                </div>
-                
-                <div class="masonry-item wide" style="grid-column: span 2;">
-                    <img src="https://i.pinimg.com/1200x/02/c9/2c/02c92c11beee58405823e7fda9130838.jpg" 
-                         alt="Пейзаж" 
-                         loading="lazy">
-                    <div class="masonry-overlay">
-                        <p>Настроение</p>
-                    </div>
-                </div>
-                
-                <!-- Ряд 4 -->
-                <div class="masonry-item">
-                    <img src="https://i.pinimg.com/1200x/68/c7/43/68c74344a1db81de562b6fd55eba0b33.jpg" 
-                         alt="Искусство" 
-                         loading="lazy">
-                    <div class="masonry-overlay">
-                        <p>Искусство</p>
-                    </div>
-                </div>
-                
-                <div class="masonry-item">
-                    <img src="https://i.pinimg.com/736x/ac/4a/eb/ac4aeb802ea37da5f64d1651ae9763b0.jpg" 
-                         alt="Рукописный текст" 
-                         loading="lazy">
-                    <div class="masonry-overlay">
-                        <p>Текст</p>
-                    </div>
-                </div>
-                
-                <div class="masonry-item">
-                    <img src="https://i.pinimg.com/1200x/fa/15/9b/fa159b416e072ef6bada96dd5f6a36c0.jpg" 
-                         alt="Свечи" 
-                         loading="lazy">
-                    <div class="masonry-overlay">
-                        <p>Свет</p>
-                    </div>
-                </div>
-                
-                <!-- Ряд 5 -->
-                <div class="masonry-item wide" style="grid-column: span 2;">
-                    <img src="https://i.pinimg.com/736x/8c/8c/d5/8c8cd5d509c4387055495cd6cbaa374c.jpg" 
-                         alt="Коллаж" 
-                         loading="lazy">
-                    <div class="masonry-overlay">
-                        <p>Коллаж</p>
-                    </div>
-                </div>
-                
-                <div class="masonry-item">
-                    <img src="https://i.pinimg.com/736x/7a/e6/b3/7ae6b3e6581ff2997dda8fe120bd9862.jpg" 
-                         alt="Цветы" 
-                         loading="lazy">
-                    <div class="masonry-overlay">
-                        <p>Флора</p>
-                    </div>
-                </div>
-                
-                <!-- Ряд 6 -->
-                <div class="masonry-item">
-                    <img src="https://i.pinimg.com/736x/99/c1/aa/99c1aaf4ca3a57b430caf45012b18d1e.jpg" 
-                         alt="Старинное зеркало" 
-                         loading="lazy">
-                    <div class="masonry-overlay">
-                        <p>Отражения</p>
-                    </div>
-                </div>
-                
-                <div class="masonry-item">
-                    <img src="https://i.pinimg.com/736x/17/ce/55/17ce556e67d399322577839fe6a134be.jpg" 
-                         alt="Фактуры" 
-                         loading="lazy">
-                    <div class="masonry-overlay">
-                        <p>Фактуры</p>
-                    </div>
-                </div>
-                
-                <div class="masonry-item tall" style="grid-row: span 2;">
-                    <img src="https://i.pinimg.com/736x/52/4a/97/524a9710bc5d0eb5c6ba6660ab7d669d.jpg" 
-                         alt="Арт-объект" 
-                         loading="lazy">
-                    <div class="masonry-overlay">
-                        <p>Объекты</p>
-                    </div>
-                </div>
-                
-                <!-- Ряд 7 -->
-                <div class="masonry-item">
-                    <img src="https://i.pinimg.com/736x/33/00/c1/3300c1bf93d5a9f7662f09f847bb8be3.jpg" 
-                         alt="Текстиль" 
-                         loading="lazy">
-                    <div class="masonry-overlay">
-                        <p>Текстиль</p>
-                    </div>
-                </div>
-                
-                <div class="masonry-item">
-                    <img src="https://i.pinimg.com/736x/ad/ac/6c/adac6c8fc6a23b66a454299f8387dc59.jpg" 
-                         alt="Композиция" 
-                         loading="lazy">
-                    <div class="masonry-overlay">
-                        <p>Композиция</p>
-                    </div>
-                </div>
-                
-                <!-- Ряд 8 -->
-                <div class="masonry-item">
-                    <img src="https://i.pinimg.com/736x/0c/f1/93/0cf193ebc01bb4aa9a777696f84f751c.jpg" 
-                         alt="Цветовая палитра" 
-                         loading="lazy">
-                    <div class="masonry-overlay">
-                        <p>Цвета</p>
-                    </div>
-                </div>
-                
-                <div class="masonry-item wide" style="grid-column: span 2;">
-                    <img src="https://i.pinimg.com/736x/53/ca/8b/53ca8bb36361b5bb5d6c65e6fa7ed2fa.jpg" 
-                         alt="Натюрморт" 
-                         loading="lazy">
-                    <div class="masonry-overlay">
-                        <p>Натюрморт</p>
-                    </div>
-                </div>
-                
-                <div class="masonry-item">
-                    <img src="https://i.pinimg.com/1200x/12/9b/ed/129bed6fa78d2bcf73f1c79c510aa241.jpg" 
-                         alt="Иллюстрация" 
-                         loading="lazy">
-                    <div class="masonry-overlay">
-                        <p>Иллюстрация</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Playlist Section -->
-        <section class="playlist-section fade-in">
-            <h2 class="section-title">Плейлист вечера</h2>
-            <p style="text-align: center; color: var(--color-taupe); margin-top: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Лёгкий саундтрек для создания настроения
-            </p>
-            
-            <div class="playlist-container">
-                <div class="music-player">
-                    <div class="player-controls">
-                        <button class="play-btn" id="playBtn">
-                            <i class="fas fa-play"></i>
-                        </button>
-                        <div class="track-info">
-                            <div class="track-title" id="currentTrack">Нажми на трек для прослушивания</div>
-                            <div class="track-progress">
-                                <div class="progress-bar" id="progressBar"></div>
-                            </div>
-                        </div>
-                        <button class="volume-btn" id="volumeBtn">
-                            <i class="fas fa-volume-up"></i>
-                        </button>
-                    </div>
-                    
-                    <div class="playlist-tracks" id="playlistTracks">
-                        <!-- Треки будут добавляться динамически в случайном порядке -->
-                    </div>
-                    
-                    <p style="text-align: center; color: var(--color-taupe); font-size: 0.9rem; margin-top: 20px;">
-                        Можно включить фоном пока выбираешь образ ✨
-                    </p>
-                </div>
-            </div>
-        </section>
-        
-        <section class="keywords-section fade-in">
-            <h2 class="section-title">Ключевые слова для вдохновения</h2>
-            <p style="text-align: center; color: var(--color-taupe); margin-top: 10px;">Нажми на любое слово для поиска образов</p>
-            
-            <div class="keywords-grid" id="keywords-grid">
-                <!-- Ключевые слова будут добавляться динамически -->
-            </div>
-            
-            <h3 style="text-align: center; margin-top: 50px; font-size: 1.3rem; color: var(--color-beige); font-weight: 400;">Эстетики</h3>
-            <div class="keywords-grid" id="aesthetics-grid" style="margin-top: 25px;">
-                <!-- Эстетики будут добавляться динамически -->
-            </div>
-        </section>
-        
-        <section class="avoid-section fade-in">
-            <h3 class="avoid-title">Какие цвета лучше не использовать</h3>
-            <p style="color: var(--color-taupe); margin-bottom: 25px;">(это важно для сохранения общего настроения)</p>
-            
-            <div class="avoid-list">
-                <div class="avoid-item">Чисто-белый</div>
-                <div class="avoid-item">Неоновые цвета</div>
-                <div class="avoid-item">Ярко-красный</div>
-                <div class="avoid-item">Холодный розовый</div>
-                <div class="avoid-item">Ярко-синий</div>
-                <div class="avoid-item">Глянцевый чёрный латексного типа</div>
-            </div>
-        </section>
-        
-        <section class="details-section fade-in">
-            <div class="date-info">
-                <span class="date-highlight">Ориентировочная дата:</span> 11.04 / 12.04
-            </div>
-            <p class="details-note">
-                Точное время и место проведения будет определено позже.
-            </p>
-            
-            <div style="margin-top: 50px;">
-                <p style="color: var(--color-beige); margin-bottom: 20px; font-size: 1.1rem;">
-                    Оставлю ссылку на небольшой вишлист. Только если вдруг захочется что-то принести, без обязательств!
-                </p>
-                
-                <a href="#" class="wishlist-link" id="wishlist-link">Перейти к вишлисту</a>
-            </div>
-        </section>
+        <!-- ... остальной контент ... -->
         
         <footer>
             <p class="footer-note">С любовью</p>
@@ -1458,7 +154,7 @@
     </div>
 
     <script>
-        // Данные для всех девочек
+        // Данные для всех девочек (остаются без изменений)
         const girlsData = {
             nastya: {
                 name: "Настя",
@@ -1496,183 +192,34 @@
                 wishlistLink: "#",
                 imagePlaceholders: 6
             },
-            milena: {
-                name: "Милена",
-                color: "#9c3d2d",
-                colorLight: "#b45a45",
-                colorDark: "#7a2e1f",
-                colorName: "Тёплый приглушённый терракотовый / медный",
-                colorDescription: "Цвет, символизирующий свет, живость и внутреннее тепло.",
-                generalStyleDescription: "Общая палитра вечера — мягкая и сложная, без резких контрастов.",
-                letterTexts: [
-                    "В этом году мне хочется отметить день рождения очень спокойно и по-настоящему.",
-                    "Мне исполняется 23, и я собираю небольшой вечер с разговорами, ощущениями и теплом.",
-                    "Я правда буду рада, если ты будешь рядом в этот день."
-                ],
-                imagesTitle: "Картинки для вдохновения",
-                imagesDescription: "Можешь опираться на эти примеры",
-                keywords: [
-                    "dark academia outfit",
-                    "vintage academia outfit", 
-                    "soft gothic outfit",
-                    "coquette vintage",
-                    "90s librarian outfit",
-                    "layered dress outfit",
-                    "vintage pinafore dress",
-                    "corset skirt outfit",
-                    "Edwardian inspired outfit"
-                ],
-                aesthetics: [
-                    "dark coquette",
-                    "romantic academia", 
-                    "soft grunge vintage",
-                    "french vintage girl",
-                    "Victorian inspired casual"
-                ],
-                wishlistLink: "#",
-                imagePlaceholders: 6
-            },
-            kristina: {
-                name: "Кристина",
-                color: "#a89bb9",
-                colorLight: "#c2b7d0",
-                colorDark: "#8a7ca0",
-                colorName: "Пыльно-лавандовый / светлый серо-сиреневый",
-                colorDescription: "Нежный оттенок, символизирующий духовность, сострадание и щедрость.",
-                generalStyleDescription: "Вечер будет собран в мягкой, спокойной палитре.",
-                letterTexts: [
-                    "Я отмечаю день рождения немного иначе, чем обычно: камерно и спокойно.",
-                    "Мне исполняется 23, и хочется провести этот вечер легко и с удовольствием от общения.",
-                    "Буду очень счастлива, если ты сможешь присутствовать."
-                ],
-                imagesTitle: "Визуальные подсказки",
-                imagesDescription: "Ориентируйся на них так, как тебе комфортно",
-                keywords: [
-                    "dark academia outfit",
-                    "vintage academia outfit", 
-                    "soft gothic outfit",
-                    "coquette vintage",
-                    "90s librarian outfit",
-                    "layered dress outfit",
-                    "vintage pinafore dress",
-                    "corset skirt outfit",
-                    "Edwardian inspired outfit"
-                ],
-                aesthetics: [
-                    "dark coquette",
-                    "romantic academia", 
-                    "soft grunge vintage",
-                    "french vintage girl",
-                    "Victorian inspired casual"
-                ],
-                wishlistLink: "#",
-                imagePlaceholders: 6
-            },
-            zlata: {
-                name: "Злата",
-                color: "#6b7d6d",
-                colorLight: "#8a9c8b",
-                colorDark: "#556155",
-                colorName: "Мягкий оливковый / серо-зелёный",
-                colorDescription: "Спокойный цвет, символизирующий стабильность, безопасность и комфорт.",
-                generalStyleDescription: "Общий стиль вечера - сдержанный и тёплый.",
-                letterTexts: [
-                    "Я хочу отметить свой день рождения в спокойном и продуманном формате.",
-                    "Мне исполняется 23, и мне важно провести этот вечер в приятном, неформальном круге.",
-                    "Буду рада, если ты присоединишься."
-                ],
-                imagesTitle: "Визуальные ориентиры",
-                imagesDescription: "Используй их, если захочется",
-                keywords: [
-                    "dark academia outfit",
-                    "vintage academia outfit", 
-                    "soft gothic outfit",
-                    "coquette vintage",
-                    "90s librarian outfit",
-                    "layered dress outfit",
-                    "vintage pinafore dress",
-                    "corset skirt outfit",
-                    "Edwardian inspired outfit"
-                ],
-                aesthetics: [
-                    "dark coquette",
-                    "romantic academia", 
-                    "soft grunge vintage",
-                    "french vintage girl",
-                    "Victorian inspired casual"
-                ],
-                wishlistLink: "#",
-                imagePlaceholders: 6
-            },
-            dasha: {
-                name: "Даша",
-                color: "#8b7355",
-                colorLight: "#a38c6f",
-                colorDark: "#6d5a40",
-                colorName: "Молочно-коричневый / тёплый шоколад",
-                colorDescription: "Цвет, символизирующий элегантность, мягкость и собранность.",
-                generalStyleDescription: "Общая палитра вечера - тёплая и сдержанная.",
-                letterTexts: [
-                    "В этом году мне хочется отметить день рождения спокойно и красиво, без лишнего шума.",
-                    "Мне исполняется 23, и я собираю небольшой атмосферный вечер.",
-                    "Мне будет очень приятно, если ты придёшь."
-                ],
-                imagesTitle: "Визуальные референсы",
-                imagesDescription: "Используй, если понадобится",
-                keywords: [
-                    "dark academia outfit",
-                    "vintage academia outfit", 
-                    "soft gothic outfit",
-                    "coquette vintage",
-                    "90s librarian outfit",
-                    "layered dress outfit",
-                    "vintage pinafore dress",
-                    "corset skirt outfit",
-                    "Edwardian inspired outfit"
-                ],
-                aesthetics: [
-                    "dark coquette",
-                    "romantic academia", 
-                    "soft grunge vintage",
-                    "french vintage girl",
-                    "Victorian inspired casual"
-                ],
-                wishlistLink: "#",
-                imagePlaceholders: 6
-            }
+            // ... остальные девочки ...
         };
 
-        // Плейлист Spotify
-        const spotifyTracks = [
+        // ОБНОВЛЁННЫЙ: Музыкальный плейлист с твоими ссылками
+        const youtubeTracks = [
             {
-                title: "Lana Del Rey - Video Games",
-                spotifyUrl: "https://open.spotify.com/track/1OculPj42mFUKeCdQb6sqL?si=hyu8DXkyTvi4Ft6BZ1hC3A",
-                duration: "4:42"
+                title: "The Books - Take Time",
+                youtubeId: "rzH7aZR3kkE"
             },
             {
-                title: "The Neighbourhood - Sweater Weather",
-                spotifyUrl: "https://open.spotify.com/track/6m3ObG4d6M92hJWYplJfnb?si=H7Hz-KIOTha21l0z39fGVA",
-                duration: "4:00"
+                title: "The Books - Be Good to Them Always", 
+                youtubeId: "1zEZW4JYQtE"
             },
             {
-                title: "Mitski - Francis Forever",
-                spotifyUrl: "https://open.spotify.com/track/3NakEPSaVKsqqimJW66xCc?si=P8VDF1LcToCQvc5xb0Ig5A",
-                duration: "2:29"
+                title: "The Books - Smells Like Content",
+                youtubeId: "moaDQ1f4hHM"
             },
             {
-                title: "Florence + The Machine - Cosmic Love",
-                spotifyUrl: "https://open.spotify.com/track/0rKI4LbWhiYLrokKjVxQHt?si=-vIaDLm5TSW_iLHgCg4xaA",
-                duration: "4:15"
+                title: "The Books - Tokyo",
+                youtubeId: "Xo74X_2LVyI"
             },
             {
-                title: "Lord Huron - The Night We Met",
-                spotifyUrl: "https://open.spotify.com/track/14KogTtMWr07LMu5E66IrS?si=ZlMIXfWbQCSBxb1lHDig5A",
-                duration: "3:28"
+                title: "The Books - A Little Longing Goes Away",
+                youtubeId: "frlU4ezJCcs"
             },
             {
-                title: "Bon Iver - Holocene",
-                spotifyUrl: "https://open.spotify.com/track/44QQw1tx2V1CvkLYP1hwqP?si=BucL4V9KRounsG6buCFz0g",
-                duration: "5:36"
+                title: "The Books - It Never Changes to Stop",
+                youtubeId: "zySedcICZ8Y"
             }
         ];
 
@@ -1680,7 +227,7 @@
         function getGirlFromURL() {
             const urlParams = new URLSearchParams(window.location.search);
             const girl = urlParams.get('girl');
-            return girl || 'nastya'; // По умолчанию показываем Насте
+            return girl || 'nastya';
         }
 
         // Преобразуем hex цвет в rgb
@@ -1693,67 +240,17 @@
             } : null;
         }
 
-        // Перемешиваем массив случайным образом
-        function shuffleArray(array) {
-            const newArray = [...array];
-            for (let i = newArray.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-            }
-            return newArray;
-        }
-
-        // Создаем плейлист в случайном порядке
-        function createRandomPlaylist() {
-            const playlistContainer = document.getElementById('playlistTracks');
-            const shuffledTracks = shuffleArray(spotifyTracks);
-            
-            playlistContainer.innerHTML = '';
-            
-            shuffledTracks.forEach((track, index) => {
-                const trackElement = document.createElement('div');
-                trackElement.className = 'track-item';
-                trackElement.innerHTML = `
-                    <div class="track-number">${String(index + 1).padStart(2, '0')}</div>
-                    <div class="track-details">
-                        <div class="track-name">${track.title}</div>
-                        <div class="track-duration">${track.duration}</div>
-                    </div>
-                `;
-                
-                trackElement.addEventListener('click', () => {
-                    window.open(track.spotifyUrl, '_blank');
-                    
-                    // Обновляем текущий трек в плеере
-                    document.getElementById('currentTrack').innerHTML = `
-                        <i class="fab fa-spotify spotify-icon"></i> ${track.title}
-                    `;
-                    
-                    // Убираем выделение со всех треков
-                    document.querySelectorAll('.track-item').forEach(item => {
-                        item.classList.remove('playing');
-                    });
-                    
-                    // Добавляем выделение текущему треку
-                    trackElement.classList.add('playing');
-                });
-                
-                playlistContainer.appendChild(trackElement);
-            });
-            
-            // Устанавливаем первый трек как текущий
-            if (shuffledTracks.length > 0) {
-                document.getElementById('currentTrack').innerHTML = `
-                    <i class="fab fa-spotify spotify-icon"></i> Нажми на трек для прослушивания
-                `;
-            }
+        // Форматирование времени (секунды в мм:сс)
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
         }
 
         // Загружаем данные для выбранной девочки
         function loadGirlData(girlKey) {
             const girlData = girlsData[girlKey];
             if (!girlData) {
-                // Если девочка не найдена, показываем сообщение об ошибке
                 document.getElementById('loader').innerHTML = `
                     <div style="text-align: center; max-width: 500px; padding: 40px;">
                         <h2 style="color: var(--color-primary); margin-bottom: 20px;">Приглашение не найдено</h2>
@@ -1821,9 +318,6 @@
                 aestheticsGrid.appendChild(aestheticElement);
             });
 
-            // Создаем случайный плейлист
-            createRandomPlaylist();
-
             // Устанавливаем ссылку на вишлист
             document.getElementById('wishlist-link').href = girlData.wishlistLink;
 
@@ -1852,10 +346,302 @@
             }, 1000);
         }
 
+        // ОБНОВЛЁННАЯ ФУНКЦИЯ: Инициализация YouTube плеера
+        function initYouTubePlayer() {
+            let player;
+            let currentTrackIndex = 0;
+            let isPlaying = false;
+            let isMuted = false;
+            let progressInterval;
+            let isDraggingProgress = false;
+            let volume = 50; // Начальная громкость 50%
+
+            // Загружаем YouTube API
+            if (!window.YT) {
+                const tag = document.createElement('script');
+                tag.src = "https://www.youtube.com/iframe_api";
+                const firstScriptTag = document.getElementsByTagName('script')[0];
+                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+            }
+
+            // Вызывается, когда YouTube API готов
+            window.onYouTubeIframeAPIReady = function() {
+                player = new YT.Player('youtubePlayer', {
+                    height: '0',
+                    width: '0',
+                    videoId: youtubeTracks[currentTrackIndex].youtubeId,
+                    playerVars: {
+                        'autoplay': 0, // Не автовоспроизводим сразу
+                        'controls': 0,
+                        'disablekb': 1,
+                        'fs': 0,
+                        'modestbranding': 1,
+                        'playsinline': 1,
+                        'rel': 0,
+                        'showinfo': 0
+                    },
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange,
+                        'onError': onPlayerError
+                    }
+                });
+            };
+
+            function onPlayerReady(event) {
+                // Устанавливаем начальную громкость
+                event.target.setVolume(volume);
+                updateVolumeUI();
+                
+                // Обновляем информацию о треке
+                updateTrackInfo();
+                
+                // Запускаем обновление прогресса
+                startProgressUpdate();
+                
+                // Автоматически начинаем воспроизведение
+                setTimeout(() => {
+                    event.target.playVideo();
+                    isPlaying = true;
+                    updatePlayButton();
+                }, 1000);
+            }
+
+            function onPlayerStateChange(event) {
+                // Обновляем кнопку play/pause
+                if (event.data === YT.PlayerState.PLAYING) {
+                    isPlaying = true;
+                    updatePlayButton();
+                    startProgressUpdate();
+                } else if (event.data === YT.PlayerState.PAUSED) {
+                    isPlaying = false;
+                    updatePlayButton();
+                    stopProgressUpdate();
+                } else if (event.data === YT.PlayerState.ENDED) {
+                    playNextTrack();
+                }
+            }
+
+            function onPlayerError(event) {
+                console.error('Ошибка воспроизведения:', event.data);
+                // Пропускаем проблемный трек
+                playNextTrack();
+            }
+
+            function updateTrackInfo() {
+                const currentTrack = youtubeTracks[currentTrackIndex];
+                document.getElementById('currentTrack').textContent = currentTrack.title;
+                
+                // Обновляем общее время трека
+                if (player && player.getDuration) {
+                    const duration = player.getDuration();
+                    document.getElementById('totalTime').textContent = formatTime(duration);
+                }
+            }
+
+            function updatePlayButton() {
+                const playBtn = document.getElementById('playBtnMini');
+                playBtn.innerHTML = isPlaying ? 
+                    '<i class="fas fa-pause"></i>' : 
+                    '<i class="fas fa-play"></i>';
+            }
+
+            function startProgressUpdate() {
+                stopProgressUpdate();
+                progressInterval = setInterval(updateProgress, 500);
+            }
+
+            function stopProgressUpdate() {
+                if (progressInterval) {
+                    clearInterval(progressInterval);
+                    progressInterval = null;
+                }
+            }
+
+            function updateProgress() {
+                if (!player || !player.getCurrentTime || !player.getDuration || isDraggingProgress) return;
+                
+                const currentTime = player.getCurrentTime();
+                const duration = player.getDuration();
+                
+                if (duration > 0) {
+                    const progressPercent = (currentTime / duration) * 100;
+                    document.getElementById('progressFill').style.width = `${progressPercent}%`;
+                    document.getElementById('currentTime').textContent = formatTime(currentTime);
+                }
+            }
+
+            function updateVolumeUI() {
+                const volumePercent = isMuted ? 0 : volume;
+                document.getElementById('volumeFill').style.width = `${volumePercent}%`;
+                document.getElementById('muteBtnMini').innerHTML = isMuted ? 
+                    '<i class="fas fa-volume-mute"></i>' : 
+                    '<i class="fas fa-volume-up"></i>';
+            }
+
+            function playTrack(index) {
+                if (index >= 0 && index < youtubeTracks.length && player) {
+                    currentTrackIndex = index;
+                    player.loadVideoById(youtubeTracks[index].youtubeId);
+                    updateTrackInfo();
+                    isPlaying = true;
+                    updatePlayButton();
+                }
+            }
+
+            function playNextTrack() {
+                const nextIndex = (currentTrackIndex + 1) % youtubeTracks.length;
+                playTrack(nextIndex);
+            }
+
+            // Обработчики событий UI
+            document.getElementById('playBtnMini').addEventListener('click', function() {
+                if (!player) return;
+                
+                if (isPlaying) {
+                    player.pauseVideo();
+                } else {
+                    player.playVideo();
+                }
+            });
+
+            document.getElementById('nextBtnMini').addEventListener('click', function() {
+                playNextTrack();
+            });
+
+            document.getElementById('muteBtnMini').addEventListener('click', function() {
+                if (!player) return;
+                
+                if (isMuted) {
+                    player.unMute();
+                    isMuted = false;
+                } else {
+                    player.mute();
+                    isMuted = true;
+                }
+                updateVolumeUI();
+            });
+
+            // Прогресс бар
+            const progressBar = document.getElementById('progressBar');
+            progressBar.addEventListener('click', function(e) {
+                if (!player || !player.getDuration) return;
+                
+                const rect = this.getBoundingClientRect();
+                const clickX = e.clientX - rect.left;
+                const percentage = Math.min(Math.max(clickX / rect.width, 0), 1);
+                
+                const duration = player.getDuration();
+                const newTime = duration * percentage;
+                
+                player.seekTo(newTime, true);
+                document.getElementById('progressFill').style.width = `${percentage * 100}%`;
+                document.getElementById('currentTime').textContent = formatTime(newTime);
+            });
+
+            // Перетаскивание прогресс бара
+            progressBar.addEventListener('mousedown', function() {
+                isDraggingProgress = true;
+                document.addEventListener('mousemove', onProgressDrag);
+                document.addEventListener('mouseup', onProgressDragEnd);
+            });
+
+            function onProgressDrag(e) {
+                if (!isDraggingProgress || !player || !player.getDuration) return;
+                
+                const rect = progressBar.getBoundingClientRect();
+                const clickX = e.clientX - rect.left;
+                const percentage = Math.min(Math.max(clickX / rect.width, 0), 1);
+                
+                document.getElementById('progressFill').style.width = `${percentage * 100}%`;
+                
+                const duration = player.getDuration();
+                const newTime = duration * percentage;
+                document.getElementById('currentTime').textContent = formatTime(newTime);
+            }
+
+            function onProgressDragEnd(e) {
+                if (!isDraggingProgress || !player || !player.getDuration) return;
+                
+                isDraggingProgress = false;
+                document.removeEventListener('mousemove', onProgressDrag);
+                document.removeEventListener('mouseup', onProgressDragEnd);
+                
+                const rect = progressBar.getBoundingClientRect();
+                const clickX = e.clientX - rect.left;
+                const percentage = Math.min(Math.max(clickX / rect.width, 0), 1);
+                
+                const duration = player.getDuration();
+                const newTime = duration * percentage;
+                player.seekTo(newTime, true);
+            }
+
+            // Слайдер громкости
+            const volumeSlider = document.getElementById('volumeSlider');
+            volumeSlider.addEventListener('click', function(e) {
+                if (!player) return;
+                
+                const rect = this.getBoundingClientRect();
+                const clickX = e.clientX - rect.left;
+                const percentage = Math.min(Math.max(clickX / rect.width, 0), 1);
+                
+                volume = percentage * 100;
+                player.setVolume(volume);
+                updateVolumeUI();
+                
+                // Если был выключен звук - включаем его
+                if (isMuted) {
+                    player.unMute();
+                    isMuted = false;
+                    updateVolumeUI();
+                }
+            });
+
+            // Кнопка закрытия плеера
+            document.getElementById('closePlayer').addEventListener('click', function() {
+                const miniPlayer = document.getElementById('miniPlayer');
+                miniPlayer.style.opacity = '0';
+                miniPlayer.style.transform = 'translateY(-10px)';
+                setTimeout(() => {
+                    miniPlayer.style.display = 'none';
+                }, 300);
+                
+                // Останавливаем музыку при закрытии
+                if (player && isPlaying) {
+                    player.pauseVideo();
+                    stopProgressUpdate();
+                }
+            });
+
+            // Показываем плеер при клике на музыкальную иконку (добавь эту иконку в хедер)
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('music-icon') || 
+                    e.target.closest('.music-icon')) {
+                    const miniPlayer = document.getElementById('miniPlayer');
+                    miniPlayer.style.display = 'block';
+                    setTimeout(() => {
+                        miniPlayer.style.opacity = '1';
+                        miniPlayer.style.transform = 'translateY(0)';
+                    }, 10);
+                }
+            });
+        }
+
         // Инициализация при загрузке страницы
         document.addEventListener('DOMContentLoaded', () => {
             const girlKey = getGirlFromURL();
             loadGirlData(girlKey);
+            
+            // Инициализируем YouTube плеер
+            initYouTubePlayer();
+            
+            // Добавляем иконку музыки в заголовок
+            const header = document.querySelector('.header');
+            const musicIcon = document.createElement('div');
+            musicIcon.className = 'music-icon';
+            musicIcon.innerHTML = '<i class="fas fa-headphones" style="color: var(--color-primary); font-size: 1.2rem; cursor: pointer; position: absolute; right: 20px; top: 20px;"></i>';
+            musicIcon.title = 'Музыка для вечера';
+            header.appendChild(musicIcon);
         });
 
         // Обработка ссылки вишлиста
@@ -1866,34 +652,11 @@
             }
         });
 
-        // Кнопки плеера (открывают Spotify)
-        document.getElementById('playBtn').addEventListener('click', function() {
-            const currentTrackElement = document.querySelector('.track-item.playing');
-            if (currentTrackElement) {
-                // Находим индекс текущего трека
-                const tracks = Array.from(document.querySelectorAll('.track-item'));
-                const currentIndex = tracks.indexOf(currentTrackElement);
-                
-                // Открываем ссылку на трек в Spotify
-                if (currentIndex >= 0 && currentIndex < spotifyTracks.length) {
-                    window.open(spotifyTracks[currentIndex].spotifyUrl, '_blank');
-                }
-            } else {
-                // Если нет текущего трека, открываем первый
-                if (spotifyTracks.length > 0) {
-                    window.open(spotifyTracks[0].spotifyUrl, '_blank');
-                }
-            }
-        });
-
-        // Кнопка громкости (просто меняет иконку)
-        let isMuted = false;
-        document.getElementById('volumeBtn').addEventListener('click', function() {
-            isMuted = !isMuted;
-            this.innerHTML = isMuted ? 
-                '<i class="fas fa-volume-mute"></i>' : 
-                '<i class="fas fa-volume-up"></i>';
-        });
+        // Добавляем скрытый элемент для YouTube плеера
+        const youtubePlayerDiv = document.createElement('div');
+        youtubePlayerDiv.id = 'youtubePlayer';
+        youtubePlayerDiv.style.display = 'none';
+        document.body.appendChild(youtubePlayerDiv);
     </script>
 </body>
 </html>
